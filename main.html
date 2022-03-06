@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <style>
+        
+        .grid-container {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                padding: 10px;
+            }
+        
+    
+            .button {
+                display: flex;
+                justify-content: center;
+                margin: 1em 0;
+                padding:  10px 24px;;
+            }
+            .btn {
+                background-color: #092138;
+                color: white;
+                font-size: 25px;
+                padding:  12px 28px;;
+                margin: 1em 0;
+                justify-content: center;
+                
+            }
+    
+            table {
+                font-family: 'kanitlight';
+                border-collapse: collapse;
+                width: 100%;
+            }
+    
+            td,
+            th {
+                border: 1px solid #0b1029;
+                text-align: center;
+                padding: 8px;
+            }
+    
+            label {
+           
+                text-align: center;
+            }
+            div {
+           
+                text-align: center;
+           
+             }
+    
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            body {
+                background: linear-gradient(120deg,#d4ebeb, #c7d8e4) ;
+            }
+            img {
+                padding:10px;
+                width: 80%;
+                margin-bottom: 1em;
+                
+    }
+        </style>
+        <title>AisanA Hotel Korat Reserve in Blockchain</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <!-- <script src="./node_modules/web3/dist/web3.min.js">
+        </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+    
+           <h1 style="text-align:center">AisanA Hotel Korat</h1>
+            <h3 style="text-align:center">โปรดเลือกห้องพักที่ท่านต้องการ</h3>
+            <h4>    </h4>
+            <div class="grid-container">
+                <div class="grid-block">
+                    <label >
+                        SUPERIOR ROOM TWIN</label>
+                    <img src ="https://sp-ao.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_1422,h_828/https://aisanahotel.com/wp-content/uploads/2020/07/dsc0959-33-e1595497140189.jpg"width="250px">
+                    <label >0.001 Ether</label>
+                    <button class="btn" id="document1" 
+                            onclick="btnReserve('SUPERIOR ROOM TWIN',1000000000000000)">reserve</button>
+                    
+                    
+                    
+                </div>
+            
+                <div class="grid-block">
+                    <label class="col-lg-2 control-label">
+                        AISANA SUITE</label>
+                    <img src ="https://sp-ao.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_1422,h_828/https://aisanahotel.com/wp-content/uploads/2020/07/dsc0959-11-e1595497147327.jpg">
+                    <label >0.002 Ether</label>
+                    <button class="btn" id="document1"
+                            onclick="btnReserve('AISANA SUITE',2000000000000000)">reserve</button>
+                    
+                </div>
+    
+                <div class="grid-block">
+                    <label class="col-lg-2 control-label">
+                        DELUXE ROOM</label>
+                        <img src ="https://sp-ao.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_1422,h_828/https://aisanahotel.com/wp-content/uploads/2020/07/dsc0959-22-e1595497155918.jpg">
+                    <label >0.003 Ether</label>
+                    <button class="btn" id="document1"
+                            onclick="btnReserve('DELUXE ROOM',3000000000000000)">reserve</button>
+                </div>
+    
+    
+                <div class="grid-block">
+                    <label class="col-lg-2 control-label">
+                        STUDIO ROOM</label>
+                    <img src ="https://sp-ao.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_1422,h_945/https://aisanahotel.com/wp-content/uploads/2020/07/aisana-grand-15-10-20190770-e1595497940366.jpg">
+                    <label >0.004 Ether</label>
+                    <button class="btn" id="document1"
+                            onclick="btnReserve('STUDIO ROOM',4000000000000000)">reserve</button>
+                    
+                </div>
+    
+                <div class="grid-block">
+                    <label class="col-lg-2 control-label">
+                        ONE BEDROOM</label>
+                        <img src ="https://sp-ao.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_1422,h_948/https://aisanahotel.com/wp-content/uploads/2020/07/king-bed-e1595498142404.jpg">
+                    <label >0.005 Ether</label>
+                    <button class="btn" id="document1"
+                            onclick="btnReserve('ONE BEDROOM',5000000000000000)">reserve</button>
+                    
+                </div>
+    
+                <div class="grid-block">
+                    <label class="col-lg-2 control-label">
+                        TWO BEDROOM</label>
+                        <img src ="https://sp-ao.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_1422,h_948/https://aisanahotel.com/wp-content/uploads/2020/07/aisana-grand-16-10-20191721-e1595498135682.jpg">
+                        <label >0.006 Ether</label>
+                    <button class="btn" id="document1" 
+                        onclick="btnReserve('TWO BEDROOM',6000000000000000)">
+                            reserve</button>
+                </div>
+                
+            
+            </div>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Room</th>
+                    <th>Owner</th>
+                </tr>
+                <tr>
+                    <td id="time1"> </td>
+                    <td id="room1"> </td>
+                    <td id="owner1"> </td>
+                </tr>
+                <tr>
+                    <td id="time2"> </td>
+                    <td id="room2"> </td>
+                    <td id="owner2"> </td>
+                </tr>
+                <tr>
+                    <td id="time3"> </td>
+                    <td id="room3"> </td>
+                    <td id="owner3"> </td>
+                </tr>
+                <tr>
+                    <td id="time4"> </td>
+                    <td id="room4"> </td>
+                    <td id="owner4"> </td>
+                </tr>
+                <tr>
+                    <td id="time5"> </td>
+                    <td id="room5"> </td>
+                    <td id="owner5"> </td>
+                </tr>
+                <tr>
+                    <td id="time6"> </td>
+                    <td id="room6"> </td>
+                    <td id="owner6"> </td>
+                </tr>
+            </table>
+    
+            
+    
+            
+        </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+    </script>
+    <script>
+        
+        async function loadWeb3() {
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum);
+                window.ethereum.enable();
+            }
+        }
+
+        let currentAccount = null;
+        window.ethereum
+            .request({ method: 'eth_accounts' })
+            .then(handleAccountsChanged)
+            .catch((err) => {
+            // Some unexpected error.
+            // For backwards compatibility reasons, if no accounts are available,
+            // eth_accounts will return an empty array.
+            console.error(err);
+            });
+
+        // Note that this event is emitted on page load.
+        // If the array of accounts is non-empty, you're already
+        // connected.
+        window.ethereum.on('accountsChanged', handleAccountsChanged);
+
+        // For now, 'eth_accounts' will continue to always return an array
+        function handleAccountsChanged(accounts) {
+            if (accounts.length === 0) {
+                // MetaMask is locked or the user has not connected any accounts
+                console.log('Please connect to MetaMask.');
+            } else if (accounts[0] !== currentAccount) {
+                currentAccount = accounts[0];
+                // Do any other work!
+            }
+        }
+
+        let abi = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "text",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "hash",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"name": "Add",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "room",
+				"type": "string"
+			}
+		],
+		"name": "reserve",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	}
+];
+
+        async function loadContract() {
+            return await new window.web3.eth.Contract(abi, '0x1df53085E62184C856a8ef1309479276Bd9D8C69');
+        }
+
+        async function load() {
+            await loadWeb3();
+            window.contract = await loadContract();
+            updateStatus('Ready!');
+        }
+        
+        function updateStatus(status) {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = status;
+            console.log(status);
+        }
+        var i = 0;
+        function btnReserve(p, v) {
+            console.log(currentAccount);
+            window.contract.methods.reserve(p).send({ from: currentAccount, value: v }, function (error, result) {
+                $("#result").html(result);
+            });
+            window.contract.once("Add", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                    var h = new Date().getHours()
+                    var m = new Date().getMinutes()
+                    $("#result").html("Name:" + event.returnValues.room + "<br/>owner:" + event.returnValues.from + "<br/>time: " + Date(event.returnValues.timestamp));
+                    i++;
+                    $("#time" + i).html(Date(event.returnValues.timestamp));
+                    $("#room" + i).html(event.returnValues.text);
+                    $("#owner" + i).html(event.returnValues.from);
+                }
+            });
+        };
+        load();
+    </script>
+</body>
+</html>
